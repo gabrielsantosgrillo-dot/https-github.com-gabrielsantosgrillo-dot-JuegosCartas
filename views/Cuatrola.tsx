@@ -463,7 +463,7 @@ const Cuatrola: React.FC<CuatrolaProps> = ({ onBack }) => {
                 const isTurn = gamePhase === 'playing' && currentPlayer === 'bottom';
                 const isPlayable = isTurn && playable.some(c => c.id === card.id);
                 return (
-                  <button key={card.id} disabled={!isPlayable && isTurn} onClick={() => playCard(card, 'bottom')} className={`relative transition-all duration-300 transform ${isPlayable ? 'hover:-translate-y-12 active:scale-90 z-30' : 'translate-y-4 opacity-50 grayscale'}`} style={{ width: '18vw', maxWidth: '75px' }}>
+                  <button key={card.id} disabled={!isPlayable && isTurn} onClick={() => playCard(card, 'bottom')} className={`relative transition-all duration-300 transform ${isPlayable ? 'hover:-translate-y-12 active:scale-90 z-30' : 'translate-y-4'}`} style={{ width: '18vw', maxWidth: '75px' }}>
                     <div className={`aspect-[2/3] bg-white rounded-lg shadow-xl overflow-hidden border-2 ${isPlayable ? 'border-emerald-400' : 'border-slate-800'}`}><img src={card.imageUrl} className="w-full h-full object-contain" /></div>
                   </button>
                 );
@@ -525,7 +525,7 @@ const Cuatrola: React.FC<CuatrolaProps> = ({ onBack }) => {
                <div className="flex flex-col gap-4">
                   <div className={`p-4 md:p-6 rounded-2xl border transition-all ${getTeam(lastTrickWinner || 'bottom') === 2 ? 'bg-rose-500/10 border-rose-500/40 shadow-rose-500/20' : 'bg-slate-800/50 border-white/5'}`}>
                     <p className="text-[8px] font-black text-rose-500 uppercase mb-1">MARCADOR</p>
-                    <p className="text-3xl md:text-5xl font-black text-white">{teamScore.team2}</p>
+                    <p className="text-3xl md:text-5xl font-black text-white">{teamScore.team1}</p>
                   </div>
                   <div className="bg-black/30 p-3 md:p-4 rounded-xl text-left flex flex-col gap-2 border border-white/5">
                     <p className="text-[8px] font-black text-rose-400 uppercase tracking-widest border-b border-white/5 pb-1 mb-1">Ellos</p>

@@ -214,7 +214,7 @@ const Tute: React.FC<TuteProps> = ({ onBack }) => {
                 key={card.id}
                 onClick={() => playCard(card, 'bottom')}
                 className={`w-24 h-36 bg-white rounded-xl shadow-2xl border-2 border-slate-200 overflow-hidden transition-all hover:-translate-y-8 hover:z-50
-                  ${currentPlayer !== 'bottom' ? 'opacity-50 grayscale' : 'hover:border-amber-500'}`}
+                  ${currentPlayer !== 'bottom' ? '' : 'hover:border-amber-500'}`}
               >
                 <img src={card.imageUrl} className="w-full h-full object-contain" />
               </button>
