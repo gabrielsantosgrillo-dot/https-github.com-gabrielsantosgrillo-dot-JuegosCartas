@@ -29,7 +29,7 @@ export const getHierarchy = (number: number): number => {
   }
 };
 
-const BASE_IMG = 'https://raw.githubusercontent.com/mcmd/playingcards.io-spanish.playing.cards/refs/heads/master/img/';
+const BASE_IMG = 'https://raw.githubusercontent.com/gabrielsantosgrillo-dot/JuegosCartas/main/img/';
 
 export const CARDS: Card[] = [];
 const suits: Suit[] = ['oros', 'copas', 'espadas', 'bastos'];
