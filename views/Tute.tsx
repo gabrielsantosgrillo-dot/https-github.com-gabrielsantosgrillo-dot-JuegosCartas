@@ -151,7 +151,8 @@ const Tute: React.FC<TuteProps> = ({ onBack }) => {
       <div className="flex items-center justify-between px-6 py-4 bg-slate-900 border-b border-white/5 z-20">
         <button onClick={onBack} className="text-amber-500 font-bold">← Menú</button>
         <div className="flex gap-4">
-          {Object.entries(playerScores).map(([k, v]) => (
+          {/* Fix: Explicitly cast Object.entries result to fix "unknown" type error */}
+          {(Object.entries(playerScores) as [PlayerPosition, PlayerScore][]).map(([k, v]) => (
             <div key={k} className={`text-center px-3 py-1 rounded bg-slate-800 border ${k === 'bottom' ? 'border-amber-500/50' : 'border-white/5'}`}>
               <p className="text-[10px] text-slate-500 font-bold uppercase">{playerNames[k as PlayerPosition]}</p>
               <p className="text-lg font-black text-white">{v.points}</p>
@@ -228,7 +229,8 @@ const Tute: React.FC<TuteProps> = ({ onBack }) => {
           <div className="text-center p-12 bg-slate-900 rounded-3xl border border-white/10 shadow-2xl">
             <h2 className="text-5xl font-black text-amber-500 mb-8 uppercase tracking-tighter">Puntos de la Mano</h2>
             <div className="grid grid-cols-2 gap-4 mb-8">
-              {Object.entries(playerScores).map(([k, v]) => (
+              {/* Fix: Explicitly cast Object.entries result to fix "unknown" type error */}
+              {(Object.entries(playerScores) as [PlayerPosition, PlayerScore][]).map(([k, v]) => (
                 <div key={k} className="p-4 bg-white/5 rounded-2xl">
                   <p className="text-xs text-slate-500 uppercase font-bold">{playerNames[k as PlayerPosition]}</p>
                   <p className="text-3xl font-black text-white">{v.points}</p>
